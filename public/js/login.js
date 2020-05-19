@@ -1,3 +1,18 @@
+// active mobile toggler
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+      
+
+
 $(document).ready(function() {
   // Getting references to our form and inputs
   var loginForm = $("form.login");
