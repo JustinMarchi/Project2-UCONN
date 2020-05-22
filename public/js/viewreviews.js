@@ -58,14 +58,16 @@ $(document).ready(function() {
     var postsToAdd = [];
     for (var i = 0; i < posts.length; i++) {
       postsToAdd.push(createNewRow(posts[i]));
+      console.log(postsToAdd);
+      
     }
     blogContainer.append(postsToAdd);
   }
 
   // This function constructs a post's HTML
   function createNewRow(post) {
-    var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    // var formattedDate = new Date(post.createdAt);
+    // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newPostCard = $("<div>");
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
@@ -73,13 +75,13 @@ $(document).ready(function() {
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
     deleteBtn.addClass("delete btn btn-danger");
-    var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
+    // var editBtn = $("<button>");
+    // editBtn.text("EDIT");
+    // editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
-    var newPostDate = $("<small>");
+    // var newPostDate = $("<small>");
     var newPostUser = $("<h5>");
-    newPostUser.text("Written by: " + post.user.name);
+    newPostUser.text("Written by: " + post.User.email);
     newPostUser.css({
       float: "right",
       color: "blue",
@@ -91,10 +93,10 @@ $(document).ready(function() {
     var newPostBody = $("<p>");
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.body);
-    newPostDate.text(formattedDate);
-    newPostTitle.append(newPostDate);
+    // newPostDate.text(formattedDate);
+    // newPostTitle.append(newPostDate);
     newPostCardHeading.append(deleteBtn);
-    newPostCardHeading.append(editBtn);
+    // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostUser);
     newPostCardBody.append(newPostBody);
