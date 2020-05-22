@@ -1,7 +1,10 @@
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
+  console.log(history.state);
+  
   var bodyInput = $("#body");
   var titleInput = $("#title");
+  history.state.title&& titleInput.val(history.state.title.split("-").join(" "));
   var cmsForm = $("#cms");
   var authorSelect = $("#author");
   // Adding an event listener for when the form is submitted
@@ -42,7 +45,7 @@ $(document).ready(function() {
       body: bodyInput
         .val()
         .trim(),
-    //   userId: authorSelect.val()
+      UserId: localStorage.getItem("userId")
     };
 
       // If we're updating a post run updatePost to update a post

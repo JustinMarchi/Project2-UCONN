@@ -60,14 +60,20 @@ $(document).ready(function () {
           bodyTableRow.append(bodyShowImage);
         var bodyShowTitle = $("<td>").text(getTitle);
           bodyTableRow.append(bodyShowTitle)
-        var bodyReviewButton = $("<td>").html("<a href='/writereviews.html' class='waves-effect waves-light btn-small cyan lighten-1 review'><i class='material-icons left'>border_color</i>Write a review</a>");
+        var bodyReviewButton = $("<td>").html(`<button data-title=${getTitle.split(" ").join("-")} class='waves-effect waves-light btn-small cyan lighten-1 review'><i class='material-icons left'>border_color</i>Write a review</button>`);
           bodyTableRow.append(bodyReviewButton);
-
-        i++;
-        bookTableBody.append(bodyTableRow);
-      }
-    displayBookDiv.append(bookTable);
-    $(".bookList").html(displayBookDiv);
-
+          
+          i++;
+          bookTableBody.append(bodyTableRow);
+        }
+        displayBookDiv.append(bookTable);
+        $(".bookList").html(displayBookDiv);
+        
+        $(".review").on("click", function() {
+          console.log($(this).attr("data-title"));
+          
+          history.pushState({title:$(this).attr("data-title")}, '', '/writereview')
+          window.location.reload();
+        })
   }
 });

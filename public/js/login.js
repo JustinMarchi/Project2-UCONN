@@ -43,9 +43,11 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
+      .then(function(res) {
+        localStorage.setItem("userId", res.id);
         window.location.replace("/members");
         // If there's an error, log the error
+      
       })
       .catch(function(err) {
         console.log(err);
