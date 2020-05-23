@@ -69,7 +69,7 @@ $(document).ready(function() {
     // var formattedDate = new Date(post.createdAt);
     // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newPostCard = $("<div>");
-    newPostCard.addClass("card");
+    newPostCard.addClass("card mt-3");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
@@ -95,7 +95,7 @@ $(document).ready(function() {
     newPostBody.text(post.body);
     // newPostDate.text(formattedDate);
     // newPostTitle.append(newPostDate);
-    newPostCardHeading.append(deleteBtn);
+    // newPostCardHeading.append(deleteBtn);
     // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostUser);

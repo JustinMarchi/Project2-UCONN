@@ -94,13 +94,13 @@ $(document).ready(function() {
 
   // A function to get Authors and then render our list of Authors
   function getAuthors() {
-    $.get("/api/authors", renderAuthorList);
+    $.get("/api/users", renderAuthorList);
   }
   // Function to either render a list of authors, or if there are none, direct the user to the page
   // to create an author first
   function renderAuthorList(data) {
     if (!data.length) {
-      window.location.href = "/authors";
+      window.location.href = "/users";
     }
     $(".hidden").removeClass("hidden");
     var rowsToAdd = [];
