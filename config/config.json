@@ -3,7 +3,6 @@
     "username": "d63s0jx1r0z8501a",
     "password": "danz3ke9symwzmlw",
     "database": "ejyash5rq8lmtg5y",
-    "start": "node server.js",
     "host": "l7cup2om0gngra77.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
@@ -12,15 +11,13 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "start": "node server.js",
     "dialect": "mysql"
   },
   "production": {
     "username": "d63s0jx1r0z8501a",
-    "use_env_variable": "JAWS_DB",
+    "use_env_variable": "JAWSDB_URL",
     "password": "danz3ke9symwzmlw",
     "database": "ejyash5rq8lmtg5y",
-    "start": "node server.js",
     "host": "l7cup2om0gngra77.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
